@@ -1,0 +1,387 @@
+/* 1. تنسيقات عامة */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Cairo', sans-serif; 
+}
+
+body {
+    background-color: #f9f9f9;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 2. الهيدر والخلفية */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 8%;
+    color: #fff;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('office4.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* النص في منتصف الهيدر */
+.hero-content {
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    transform: translateY(-50%);
+    text-align: left;
+    width: 90%;
+}
+
+.hero-content h1 { 
+    font-size: 55px; 
+    font-weight: 800; 
+    color: #ffffff; 
+    margin-bottom: 15px; 
+}
+
+.hero-content h3 { 
+    color: #C5A059; 
+    font-size: 28px; 
+    font-weight: 700; 
+}
+
+/* القائمة العلوية */
+.navbar { 
+    width: 100%; 
+    padding: 20px 0; 
+}
+
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 20px; 
+    justify-content: flex-start; 
+}
+
+.nav-links a { 
+    color: #fff; 
+    text-decoration: none; 
+    font-weight: 700; 
+    font-size: 16px; 
+    transition: 0.3s; 
+}
+
+.nav-links a:hover { 
+    color: #C5A059; 
+}
+
+/* قسم نبذة عن المكتب */
+.about-section {
+    background-color: #f9f9f9;
+    padding: 60px 8%;
+}
+
+.about-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    gap: 40px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px 0; 
+}
+
+.about-content { 
+    flex: 1; 
+    min-width: 300px; 
+    text-align: right; 
+}
+
+.about-content h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #212b88;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.about-image { 
+    flex: 1.5; 
+    min-width: 350px; 
+}
+
+.about-image img { 
+    width: 100%; 
+    height: 500px; 
+    object-fit: cover; 
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.03); 
+    cursor: pointer;
+}
+
+/* قسم الرؤية والرسالة والأهداف */
+.vision-section { 
+    padding: 80px 8%; 
+    background-color: #f9f9f9; 
+}
+
+.section-title { 
+    color: #212b88; 
+    margin-bottom: 40px; 
+    font-size: 32px; 
+    border-right: 5px solid #C5A059; 
+    padding-right: 15px; 
+    font-weight: 800; 
+    text-align: right;
+}
+
+.vision-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px; 
+    margin-bottom: 40px; 
+}
+
+.vision-card { 
+    background: #ffffff; 
+    padding: 30px; 
+    border-radius: 15px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
+    text-align: right; 
+    border-top: 4px solid #C5A059; 
+    border-left: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.vision-card h3 { 
+    color: #C5A059; 
+    margin-bottom: 15px; 
+    font-weight: 800; 
+}
+
+.goals-box { 
+    background: #ffffff; 
+    padding: 40px; 
+    border-radius: 15px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
+    border: 1px solid #f0f0f0;
+    text-align: right;
+}
+
+.goals-box h3 { 
+    color: #C5A059; 
+    margin-bottom: 20px; 
+    font-weight: 800; 
+}
+
+.goals-box li { 
+    margin-bottom: 15px; 
+    list-style: none; 
+    line-height: 1.8; 
+    font-weight: 700; 
+}
+
+/* الخطوط العامة */
+h2 { color: #C5A059; font-weight: 800; margin-bottom: 15px; }
+p { color: #333; line-height: 1.8; margin-bottom: 15px; font-weight: 700; }
+
+/* الحركة (Animation) */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content, .about-container, .vision-section {
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+}
+
+/* ==========================================
+   تنسيقات بطاقات الخدمات
+   ========================================== */
+.services-section {
+    padding: 60px 8%;
+    background-color: #f9f9f9;
+    font-family: 'Cairo', sans-serif;
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-subtitle {
+    text-align: right;
+    color: #666;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+/* شبكة البطاقات */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* بطاقة الخدمة نفسها */
+.service-card {
+    background: #ffffff !important;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eef0f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: right;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.service-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.service-number {
+    font-size: 22px;
+    font-weight: 800;
+    color: #C5A059;
+}
+
+.service-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #212b88;
+    font-weight: 700;
+}
+
+.service-preview p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* أزرار عرض التفاصيل */
+.toggle-btn {
+    margin-top: auto;
+    background: transparent;
+    border: 1.5px solid #C5A059;
+    color: #C5A059;
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    align-self: flex-start;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background: #C5A059;
+    color: #ffffff;
+}
+
+/* 
+شكل البطاقه 
+    */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.65);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 35px 30px;
+    border-radius: 14px;
+    max-width: 650px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: right;
+    direction: rtl;
+    animation: modalFadeIn 0.25s ease-in-out;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+#modalTitle {
+    color: #C5A059;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 12px;
+}
+
+#modalBody p {
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+#modalBody h4 {
+    color: #212b88;
+    margin: 15px 0 8px 0;
+    font-size: 1.15rem;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
