@@ -1,37 +1,144 @@
-/* 1. تنسيقات عامة */
+/* ==========================================
+   1. تنسيقات عامة والأساسيات
+   ========================================== */
 * { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
-    font-family: 'Cairo', sans-serif; 
-}
-
-body {
-    background-color: #f9f9f9;
+    font-family: 'Tajawal', sans-serif !important; 
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-/* 2. الهيدر والخلفية */
+body {
+    background-color: #f9f9f9;
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+/* ==========================================
+   2. الهيدر وشريط التنقل الثابت في الأعلى (Navbar)
+   ========================================== */
+.navbar { 
+    width: 100%; 
+    padding: 12px 5%; 
+    position: fixed; /* يضمن تثبيت الشريط بالكامل أعلى الشاشة أثناء التمرير */
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* الشعار والعنوان على اليمين */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-text {
+    text-align: right;
+}
+
+.brand-text h2 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #0d3b66;
+    line-height: 1.2;
+}
+
+.brand-text span {
+    font-size: 0.75rem;
+    color: #C5A059;
+    font-weight: 700;
+    display: block;
+    margin-top: 2px;
+}
+
+.brand-logo {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #C5A059;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+}
+
+.brand-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* الروابط في المنتصف */
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 20px; 
+    align-items: center;
+}
+
+.nav-links a { 
+    color: #333333; 
+    text-decoration: none; 
+    font-weight: 700; 
+    font-size: 15px; 
+    transition: color 0.3s ease; 
+}
+
+.nav-links a:hover { 
+    color: #C5A059; 
+}
+
+/* زر اتصل بالمكتب على اليسار */
+.nav-btn-box .btn-call {
+    background-color: #0d3b66;
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nav-btn-box .btn-call:hover {
+    background-color: #C5A059;
+    color: #ffffff;
+}
+
+/* قسم الصورة الرئيسية أسفل الهيدر */
 .hero-section {
     position: relative;
     width: 100%;
     height: 80vh;
     display: flex;
     flex-direction: column;
-    padding: 20px 8%;
+    padding: 120px 8% 20px 8%; /* مراعاة ارتفاع الشريط الثابت */
     color: #fff;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('office4.jpg') no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
-/* النص في منتصف الهيدر */
 .hero-content {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 5%;
     transform: translateY(-50%);
     text-align: left;
@@ -51,32 +158,9 @@ html {
     font-weight: 700; 
 }
 
-/* القائمة العلوية */
-.navbar { 
-    width: 100%; 
-    padding: 20px 0; 
-}
-
-.nav-links { 
-    list-style: none; 
-    display: flex; 
-    gap: 20px; 
-    justify-content: flex-start; 
-}
-
-.nav-links a { 
-    color: #fff; 
-    text-decoration: none; 
-    font-weight: 700; 
-    font-size: 16px; 
-    transition: 0.3s; 
-}
-
-.nav-links a:hover { 
-    color: #C5A059; 
-}
-
-/* قسم نبذة عن المكتب */
+/* ==========================================
+   3. قسم نبذة عن المكتب
+   ========================================== */
 .about-section {
     background-color: #f9f9f9;
     padding: 60px 8%;
@@ -132,20 +216,12 @@ html {
     cursor: pointer;
 }
 
-/* قسم الرؤية والرسالة والأهداف */
+/* ==========================================
+   4. قسم الرؤية والرسالة والأهداف
+   ========================================== */
 .vision-section { 
     padding: 80px 8%; 
     background-color: #f9f9f9; 
-}
-
-.section-title { 
-    color: #212b88; 
-    margin-bottom: 40px; 
-    font-size: 32px; 
-    border-right: 5px solid #C5A059; 
-    padding-right: 15px; 
-    font-weight: 800; 
-    text-align: right;
 }
 
 .vision-grid { 
@@ -171,6 +247,14 @@ html {
     color: #C5A059; 
     margin-bottom: 15px; 
     font-weight: 800; 
+    font-size: 22px;
+}
+
+.vision-card p {
+    color: #333333;
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 700;
 }
 
 .goals-box { 
@@ -195,56 +279,50 @@ html {
     font-weight: 700; 
 }
 
-/* الخطوط العامة */
-h2 { color: #C5A059; font-weight: 800; margin-bottom: 15px; }
-p { color: #333; line-height: 1.8; margin-bottom: 15px; font-weight: 700; }
-
-/* الحركة (Animation) */
-@keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(30px); }
-    100% { opacity: 1; transform: translateY(0); }
+/* ==========================================
+   5. تنسيقات عامة للعنوان الرئيسي والأقسام
+   ========================================== */
+.main-section-title { 
+    color: #212b88; 
+    font-size: 32px; 
+    font-weight: 800; 
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-.hero-content, .about-container, .vision-section {
-    animation: fadeInUp 1s ease-out forwards;
-    opacity: 0;
+.section-subtitle {
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+    font-weight: 600;
 }
 
 /* ==========================================
-   تنسيقات بطاقات الخدمات
+   6. تنسيقات بطاقات الخدمات والتوثيق 
    ========================================== */
-.services-section {
+.services-section, .notarization-section {
     padding: 60px 8%;
     background-color: #f9f9f9;
-    font-family: 'Cairo', sans-serif;
 }
 
-.services-container {
+.services-container, .notarization-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.section-subtitle {
-    text-align: right;
-    color: #666;
-    margin-bottom: 40px;
-    font-weight: 600;
-}
-
-/* شبكة البطاقات */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
 }
 
-/* بطاقة الخدمة نفسها */
-.service-card {
-    background: #ffffff !important;
+.law-service-card {
+    background: #ffffff;
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     border: 1px solid #eef0f2;
+    border-right: 4px solid #0d3b66;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -252,7 +330,7 @@ p { color: #333; line-height: 1.8; margin-bottom: 15px; font-weight: 700; }
     text-align: right;
 }
 
-.service-card:hover {
+.law-service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
@@ -270,14 +348,14 @@ p { color: #333; line-height: 1.8; margin-bottom: 15px; font-weight: 700; }
     color: #C5A059;
 }
 
-.service-header h3 {
+.law-service-card h3 {
     margin: 0;
-    font-size: 1.1rem;
-    color: #212b88;
+    font-size: 1.15rem;
+    color: #0d3b66;
     font-weight: 700;
 }
 
-.service-preview p {
+.service-preview p, .law-service-card ul li {
     color: #555;
     font-size: 0.95rem;
     line-height: 1.7;
@@ -285,7 +363,28 @@ p { color: #333; line-height: 1.8; margin-bottom: 15px; font-weight: 700; }
     margin-bottom: 15px;
 }
 
-/* أزرار عرض التفاصيل */
+.law-service-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.law-service-card ul li {
+    position: relative;
+    padding-right: 20px;
+    margin-bottom: 8px;
+}
+
+.law-service-card ul li::before {
+    content: "•";
+    color: #c5a059;
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    right: 0;
+    top: -2px;
+}
+
 .toggle-btn {
     margin-top: auto;
     background: transparent;
@@ -294,7 +393,6 @@ p { color: #333; line-height: 1.8; margin-bottom: 15px; font-weight: 700; }
     padding: 8px 18px;
     border-radius: 6px;
     cursor: pointer;
-    font-family: inherit;
     font-weight: 700;
     align-self: flex-start;
     transition: all 0.3s ease;
@@ -305,9 +403,48 @@ p { color: #333; line-height: 1.8; margin-bottom: 15px; font-weight: 700; }
     color: #ffffff;
 }
 
-/* 
-شكل البطاقه 
-    */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    background-color: #ffffff;
+    border: 1.5px solid #0d3b66;
+    color: #0d3b66;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: #0d3b66;
+    color: #ffffff;
+}
+
+.search-box {
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   7. النافذة المنبثقة (Modal)
+   ========================================== */
 .modal {
     display: none;
     position: fixed;
@@ -384,4 +521,317 @@ p { color: #333; line-height: 1.8; margin-bottom: 15px; font-weight: 700; }
         opacity: 1;
         transform: scale(1);
     }
+}
+
+/* ==========================================
+   8. قسم فريق العمل
+   ========================================== */
+.team-section {
+    padding: 80px 8%;
+    background-color: #f9f9f9;
+}
+
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.team-image {
+    flex: 1;
+    min-width: 320px;
+    position: sticky;
+    top: 90px;
+}
+
+.team-image img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+}
+
+.team-details-grid {
+    flex: 1.4;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.team-card {
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    text-align: right;
+    border-top: 4px solid #C5A059;
+    border-left: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-3px);
+}
+
+.team-card h3 {
+    color: #C5A059;
+    margin-bottom: 12px;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.team-card p {
+    color: #333333;
+    font-size: 0.98rem;
+    line-height: 1.8;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.certificates-intro {
+    font-weight: 700;
+    color: #212b88;
+    margin-bottom: 10px;
+}
+
+.team-certificates-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.team-certificates-list li {
+    position: relative;
+    padding-right: 20px;
+    margin-bottom: 8px;
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-weight: 600;
+}
+
+.team-certificates-list li::before {
+    content: "–";
+    color: #0d3b66;
+    font-weight: bold;
+    font-size: 16px;
+    position: absolute;
+    right: 0;
+    top: -1px;
+}
+
+/* ==========================================
+   9. قسم عملاؤنا المميزون
+   ========================================== */
+.clients-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.clients-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.clients-image {
+    flex: 1.2;
+    min-width: 320px;
+}
+
+.clients-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+}
+
+.clients-grid {
+    flex: 1.5;
+    min-width: 320px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.client-card {
+    background: #f9f9f9;
+    padding: 30px 20px;
+    border-radius: 12px;
+    border: 1px solid #eef0f2;
+    border-top: 4px solid #C5A059;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.client-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+}
+
+.client-card img {
+    max-width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+.client-card span {
+    color: #212b88;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* ==========================================
+   10. قسم تواصل معنا المنسق
+   ========================================== */
+.contact-section {
+    padding: 60px 8%;
+    background-color: #f9f9f9;
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-section .main-section-title {
+    margin-bottom: 12px !important;
+}
+
+.contact-section > .contact-container > p {
+    color: #555;
+    font-size: 0.95rem;
+    margin-top: 0 !important;
+    margin-bottom: 35px !important;
+    font-weight: 600;
+    text-align: center;
+}
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.contact-card {
+    background: #ffffff;
+    padding: 22px 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    text-align: center;
+    border-top: 4px solid #C5A059;
+    border-left: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+}
+
+.contact-card h3 {
+    color: #C5A059;
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.contact-card p {
+    color: #444;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.contact-card a {
+    color: #212b88;
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-card a:hover {
+    color: #C5A059;
+    text-decoration: underline;
+}
+
+.contact-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp-style {
+    background-color: #C5A059;
+    color: #ffffff;
+    border: 1.5px solid #C5A059;
+}
+
+.btn-whatsapp-style:hover {
+    background-color: #b3904e;
+}
+
+.btn-email-style {
+    background-color: #ffffff;
+    border: 1.5px solid #0d3b66;
+    color: #0d3b66;
+}
+
+.btn-email-style:hover {
+    background-color: #0d3b66;
+    color: #ffffff;
+}
+
+.working-hours-box {
+    background: #ffffff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    border: 1px solid #eef0f2;
+    color: #555;
+    font-size: 0.9rem;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.working-hours-box strong {
+    color: #212b88;
 }
